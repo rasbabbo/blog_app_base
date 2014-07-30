@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h2> <%= author.dataValues.firstname %></h2>
+  <ul>
+    <% posts.forEch(function(post) { %>
+      <li> <a href="/posts/<%= post.dataValues.id %>" ><%= post.dataValues.title %> </a> 
+      </li>
+    <% }) %>
+  </ul>
+    <a href="/authors/<%= author.dataValues.id %> /posts/new">Write a post for <%= author.dataValues.firstname %> </a>
+
+</body>
+</html>

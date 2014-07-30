@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+      <form action="/authors" method="POST">
+      <select name = "scribe">
+      <% authors.forEach(function(author) { %>
+      <option value ="<%=author.id%>"> <%= author.name %></option>
+             <% }) %> 
+            </select>
+            
+      <option>Blogs</option>
+    <input type = "text" name = "content">
+    <input type = "submit">
+  </form>
+
+</body>
+</html>

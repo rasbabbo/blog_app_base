@@ -1,4 +1,4 @@
-var express = require('express'),
+var express = require("express"),
   bodyParser = require('body-parser'),
   methodOverride = require('method-override'),
   //add the handle to the 'db' model/index
@@ -14,7 +14,7 @@ app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded());
 app.use(methodOverride());
-app.use(express.static(_dirname + 'public'));
+// app.use(express.static(_dirname + 'public'));
 // app.set('views', __dirname + '/views')
 
 
@@ -34,11 +34,11 @@ app.use(express.static(_dirname + 'public'));
 //post and author values;
 
 //just GETting values; nothing to amend
-app.get('/authors' function(req, res) {
+app.get('/authors', function(req, res) {
   db.author.findAll()
     .success(function(allAuthors) {
-    res.render('authors/index', {authors: allAuthors})
-  })
+    res.render('authors/index', {authors: allAuthors});
+  });
 });
 
 
@@ -56,9 +56,9 @@ app.get('/authors/:id', function (req, res) {
       res.render('authors/show', {
         author: foundAuthor,
         posts: foundPosts
-      })
-    })
-  })
+      });
+    });
+  });
 });
 
 
@@ -71,8 +71,8 @@ app.get('/posts/:id', function(req, res) {
     //what do we want it to do? - show results
     res.render('posts/show', {
       post: foundPost
-    })
-  })
+    });
+  });
 });
 
 
@@ -85,14 +85,14 @@ app.get('authors/:id/posts/new', function(req, res){
     //direct to posts/new
     res.render('posts/new', {
       author: foundAuthor
-    })
-  })
+    });
+  });
 });
 
 
 //POST to the server a new blog post prganized by author id
 //else how could you organize?
-app.post('authors/:id/posts' function(res, req){
+app.post('authors/:id/posts', function(res, req){
   var id = req.params.id;
   db.author.find(id)
   .success(function(foundAuthor){
@@ -100,29 +100,34 @@ app.post('authors/:id/posts' function(res, req){
     // var newPost = req.params.post - nope- just go to DB
     db.post.create(req.body.post) //creating new DB post w. bodyparser MW
     .success(function(newPost){ //newPost = db.post.create+req.body.post
+      foundAuthor.addPost(newPost)
       .success(function(){
-        res.redirect('/posts/' + newPost.dataValues.id);
-      })
-    })
+        res.redirect('/posts/' + newPost.dataValues.id);//sig of dataValues
+      });
+    });
   })
   .error(function(err){
-    res.redirect("/authors");
-  })
-});
-
-
-
-
-app.post("/article/new", function(req, res){
-  var content = req.body.content;
-  var writerId = req.body.author;
-
-  db.post.create({
-    content: musings
-  }).success(function (postObj) {
-    db.author.find(writerId).success(function (authorObj) {
-      authorObj.addPost(postObj);
-      res.redirect('/');
-    });
+    res.redirect('/authors');
   });
 });
+
+
+
+
+// app.post("/article/new", function(req, res){
+//   var content = req.body.content;
+//   var writerId = req.body.author;
+
+//   db.post.create({
+//     content: musings
+//   }).success(function (postObj) {
+//     db.author.find(writerId).success(function (authorObj) {
+//       authorObj.addPost(postObj);
+//       res.redirect('/');
+//     });
+//   });
+// });
+
+app.listen(3000, function(){
+    console.log("CRAZY ASS SERVER on localhost:3000");
+    });
