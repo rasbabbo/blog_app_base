@@ -46,8 +46,9 @@ app.get('/authors' function(req, res) {
 app.get('/authors/:id', function (req, res) {
   //designate user supplied id
   var id = req.params.id;
+  //where do we find id? - in the DB
   db.author.find(id)
-  .success(function(foundAuthor) {
+  .success(function(foundAuthor) {//param name indicative of search
     //on completion of finding author; supply corroborating posts
     foundAuthor.getPosts()
     .success(function(foundPosts) {
@@ -61,7 +62,53 @@ app.get('/authors/:id', function (req, res) {
 });
 
 
-app.get('/')
+//find post by id (num?)
+app.get('/posts/:id', function(req, res) {
+  var id = req.params.id;
+  //where do we find id - DB so:
+  db.post.find(id)
+  .success(function(foundPost){
+    //what do we want it to do? - show results
+    res.render('posts/show', {
+      post: foundPost
+    })
+  })
+});
+
+
+//find author by user supplied id and author's post
+app.get('authors/:id/posts/new', function(req, res){
+  var id = req.params.id;
+  //get author
+  db.author.find(id)
+  .success(function(foundAuthor){
+    //direct to posts/new
+    res.render('posts/new', {
+      author: foundAuthor
+    })
+  })
+});
+
+
+//POST to the server a new blog post prganized by author id
+//else how could you organize?
+app.post('authors/:id/posts' function(res, req){
+  var id = req.params.id;
+  db.author.find(id)
+  .success(function(foundAuthor){
+    //need to import blog
+    // var newPost = req.params.post - nope- just go to DB
+    db.post.create(req.body.post) //creating new DB post w. bodyparser MW
+    .success(function(newPost){ //newPost = db.post.create+req.body.post
+      .success(function(){
+        res.redirect('/posts/' + newPost.dataValues.id);
+      })
+    })
+  })
+  .error(function(err){
+    res.redirect("/authors");
+  })
+});
 
 
 

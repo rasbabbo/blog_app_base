@@ -23,6 +23,16 @@ Object.keys(db).forEach(function(modelName) {
   }
 })
 
+db.post.create({title: "something profound", body: "lickity split"})
+  .success(function(postObj){
+    console.log("Crazy", postObj);
+  });
+
+db.author.create({firstname: "les", lastname: "Paul"})
+  .success(function(authorObj){
+    console.log("nuts", authorObj);
+  });
+
 
 db.post.belongsTo(db.author);
 

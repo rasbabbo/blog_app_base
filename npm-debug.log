@@ -1,0 +1,163 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'sequelize-cli' ]
+2 info using npm@1.4.14
+3 info using node@v0.10.29
+4 warn package.json association_review@0.0.0 No description
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'sequelize-cli@^0.2.3', null ]
+7 verbose cache add name=undefined spec="sequelize-cli@^0.2.3" args=["sequelize-cli@^0.2.3",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'sequelize-cli@^0.2.3',
+8 verbose parsed url   path: 'sequelize-cli@^0.2.3',
+8 verbose parsed url   href: 'sequelize-cli@^0.2.3' }
+9 verbose cache add name="sequelize-cli" spec="^0.2.3" args=["sequelize-cli","^0.2.3"]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: '^0.2.3',
+10 verbose parsed url   path: '^0.2.3',
+10 verbose parsed url   href: '^0.2.3' }
+11 verbose addNamed [ 'sequelize-cli', '^0.2.3' ]
+12 verbose addNamed [ null, '>=0.2.3-0 <0.3.0-0' ]
+13 silly lockFile 1ca386ea-sequelize-cli-0-2-3 sequelize-cli@^0.2.3
+14 verbose lock sequelize-cli@^0.2.3 /Users/rasbabbo/.npm/1ca386ea-sequelize-cli-0-2-3.lock
+15 silly addNameRange { name: 'sequelize-cli',
+15 silly addNameRange   range: '>=0.2.3-0 <0.3.0-0',
+15 silly addNameRange   hasData: false }
+16 verbose url raw sequelize-cli
+17 verbose url resolving [ 'https://registry.npmjs.org/', './sequelize-cli' ]
+18 verbose url resolved https://registry.npmjs.org/sequelize-cli
+19 info trying registry request attempt 1 at 23:04:03
+20 verbose etag "3ZWFWYPS153LJEKU4ZPR8ZTHQ"
+21 http GET https://registry.npmjs.org/sequelize-cli
+22 http 304 https://registry.npmjs.org/sequelize-cli
+23 silly registry.get cb [ 304,
+23 silly registry.get   { date: 'Wed, 30 Jul 2014 06:04:03 GMT',
+23 silly registry.get     server: 'Apache',
+23 silly registry.get     via: '1.1 varnish',
+23 silly registry.get     'last-modified': 'Wed, 30 Jul 2014 06:04:03 GMT',
+23 silly registry.get     'cache-control': 'max-age=60',
+23 silly registry.get     etag: '"3ZWFWYPS153LJEKU4ZPR8ZTHQ"',
+23 silly registry.get     'x-served-by': 'cache-lax1423-LAX',
+23 silly registry.get     'x-cache': 'MISS',
+23 silly registry.get     'x-cache-hits': '0',
+23 silly registry.get     'x-timer': 'S1406700243.702015,VS0,VE37',
+23 silly registry.get     vary: 'Accept',
+23 silly registry.get     'content-length': '0',
+23 silly registry.get     'keep-alive': 'timeout=10, max=50',
+23 silly registry.get     connection: 'Keep-Alive' } ]
+24 verbose etag sequelize-cli from cache
+25 silly addNameRange number 2 { name: 'sequelize-cli',
+25 silly addNameRange   range: '>=0.2.3-0 <0.3.0-0',
+25 silly addNameRange   hasData: true }
+26 silly addNameRange versions [ 'sequelize-cli',
+26 silly addNameRange   [ '0.0.1',
+26 silly addNameRange     '0.0.2',
+26 silly addNameRange     '0.0.3',
+26 silly addNameRange     '0.0.4',
+26 silly addNameRange     '0.1.0',
+26 silly addNameRange     '0.1.1',
+26 silly addNameRange     '0.2.0',
+26 silly addNameRange     '0.2.1',
+26 silly addNameRange     '0.2.2',
+26 silly addNameRange     '0.2.3' ] ]
+27 verbose addNamed [ 'sequelize-cli', '0.2.3' ]
+28 verbose addNamed [ '0.2.3', '0.2.3' ]
+29 silly lockFile d720da63-sequelize-cli-0-2-3 sequelize-cli@0.2.3
+30 verbose lock sequelize-cli@0.2.3 /Users/rasbabbo/.npm/d720da63-sequelize-cli-0-2-3.lock
+31 silly lockFile d720da63-sequelize-cli-0-2-3 sequelize-cli@0.2.3
+32 silly lockFile d720da63-sequelize-cli-0-2-3 sequelize-cli@0.2.3
+33 silly lockFile 1ca386ea-sequelize-cli-0-2-3 sequelize-cli@^0.2.3
+34 silly lockFile 1ca386ea-sequelize-cli-0-2-3 sequelize-cli@^0.2.3
+35 silly resolved [ { name: 'sequelize-cli',
+35 silly resolved     version: '0.2.3',
+35 silly resolved     description: 'The sequelize CLI.',
+35 silly resolved     main: 'index.js',
+35 silly resolved     dependencies:
+35 silly resolved      { 'cli-color': '~0.3.2',
+35 silly resolved        'fs-extra': '^0.9.1',
+35 silly resolved        gulp: '~3.6.2',
+35 silly resolved        'gulp-help': '~0.1.6',
+35 silly resolved        lodash: '~2.4.1',
+35 silly resolved        moment: '~2.6.0',
+35 silly resolved        sequelize: '*',
+35 silly resolved        'underscore.string': '^2.3.3',
+35 silly resolved        yargs: '~1.2.1' },
+35 silly resolved     devDependencies:
+35 silly resolved      { 'coffee-script': '~1.7.1',
+35 silly resolved        'expect.js': '~0.3.1',
+35 silly resolved        mariasql: '~0.1.20',
+35 silly resolved        mocha: '~1.20.1',
+35 silly resolved        mysql: '~2.1.1',
+35 silly resolved        pg: '~3.0.3',
+35 silly resolved        sqlite3: '~2.2.3',
+35 silly resolved        through2: '^0.5.1' },
+35 silly resolved     scripts: { test: 'make all' },
+35 silly resolved     repository: { type: 'git', url: 'git://github.com/sequelize/cli.git' },
+35 silly resolved     keywords: [ 'sequelize', 'cli' ],
+35 silly resolved     author: { name: 'Sascha Depold' },
+35 silly resolved     license: 'MIT',
+35 silly resolved     bugs: { url: 'https://github.com/sequelize/cli/issues' },
+35 silly resolved     homepage: 'https://github.com/sequelize/cli',
+35 silly resolved     bin: { sequelize: 'bin/sequelize' },
+35 silly resolved     _id: 'sequelize-cli@0.2.3',
+35 silly resolved     _shasum: '1ac5e9c3b4a06703caa62cc7beeeace99ab5bb6e',
+35 silly resolved     _from: 'sequelize-cli@^0.2.3',
+35 silly resolved     _npmVersion: '1.4.9',
+35 silly resolved     _npmUser: { name: 'sdepold', email: 'sascha@depold.com' },
+35 silly resolved     maintainers: [ [Object] ],
+35 silly resolved     dist:
+35 silly resolved      { shasum: '1ac5e9c3b4a06703caa62cc7beeeace99ab5bb6e',
+35 silly resolved        tarball: 'http://registry.npmjs.org/sequelize-cli/-/sequelize-cli-0.2.3.tgz' },
+35 silly resolved     directories: {},
+35 silly resolved     _resolved: 'https://registry.npmjs.org/sequelize-cli/-/sequelize-cli-0.2.3.tgz',
+35 silly resolved     readme: 'ERROR: No README data found!' } ]
+36 info install sequelize-cli@0.2.3 into /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base
+37 info installOne sequelize-cli@0.2.3
+38 info /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/sequelize-cli unbuild
+39 info preuninstall sequelize-cli@0.2.3
+40 info uninstall sequelize-cli@0.2.3
+41 verbose true,/Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules,/Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules unbuild sequelize-cli@0.2.3
+42 verbose /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin,[object Object] binRoot
+43 info /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/sequelize-cli unbuild
+44 info preuninstall sequelize-cli@0.2.3
+45 info uninstall sequelize-cli@0.2.3
+46 verbose true,/Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules,/Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules unbuild sequelize-cli@0.2.3
+47 verbose /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin,[object Object] binRoot
+48 error error rolling back Error: Refusing to delete: /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin/sequelize not in /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/sequelize-cli
+48 error error rolling back     at clobberFail (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:57:12)
+48 error error rolling back     at next (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:43:14)
+48 error error rolling back     at /usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:52:12
+48 error error rolling back     at Object.oncomplete (fs.js:107:15)
+48 error error rolling back  sequelize-cli@0.2.3 { [Error: Refusing to delete: /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin/sequelize not in /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/sequelize-cli]
+48 error error rolling back   code: 'EEXIST',
+48 error error rolling back   path: '/Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin/sequelize' }
+49 error Refusing to delete: /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin/sequelize not in /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/sequelize-cli
+File exists: /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin/sequelize
+Move it away, and try again.
+50 error System Darwin 13.2.0
+51 error command "node" "/usr/local/bin/npm" "install" "--save" "sequelize-cli"
+52 error cwd /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base
+53 error node -v v0.10.29
+54 error npm -v 1.4.14
+55 error path /Users/rasbabbo/code/week_four/tues_homework_redo/blog_app_base/node_modules/.bin/sequelize
+56 error code EEXIST
+57 verbose exit [ 1, true ]

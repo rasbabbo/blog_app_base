@@ -1,1 +1,17 @@
-index.ejs
+<!DOCTYPE>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <form action="/article/new" method="POST">
+    <select name = "author">
+      <% authors.forEach(function (writer) { %>
+      <option value ="<%=author.id%>"> <%= author.name %></option>
+             <% }) %> 
+
+            </select>
+      <option>Blogs</option>
+    <input type = "text" name = "content">
+    <input type = "submit">
+  </form>
